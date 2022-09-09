@@ -32,6 +32,7 @@ app.use(cors())
 const buildersController = require('./controllers/builders.js');
 
 app.use('/builders', buildersController);
+
 app.get('/seed', async (req, res) => {
   await Builders.deleteMany({});
   await Builders.insertMany(buildersData);
